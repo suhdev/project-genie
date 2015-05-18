@@ -1,0 +1,16 @@
+{
+  "name": "project-generator",
+  "version": "1.0.0",
+  "description": "A package to generate folder structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine "
+  },
+  "author": "Suhail Abood <suhail.abood@gmail.com> (suhailabood.me)",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "mkdirp": "^0.5.1",
+    "underscore": "^1.8.3"
+  }
+}

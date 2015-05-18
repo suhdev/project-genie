@@ -1,0 +1,6 @@
+node_modules/
+components/
+bower_components/
+src/
+gulpfile.js
+Gruntfile.js

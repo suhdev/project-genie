@@ -1,0 +1,9 @@
+gulp.task('concat-source',function(){
+	gulp.src(PATHS.JS.SRC)
+		.pipe(concat(PATHS.JS.DIST.MAX))
+		.pipe(gulp.dest(PATHS.JS.DIST.BASE));
+	gulp.src(PATHS.JS.SRC)
+		.pipe(concat(PATHS.JS.DIST.MIN))
+		.pipe(uglify())
+		.pipe(gulp.dest(PATHS.JS.DIST.BASE))
+});
