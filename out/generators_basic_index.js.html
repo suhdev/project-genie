@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>generators/basic/index.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Generator.html">Generator</a><ul class='methods'><li data-type='method'><a href="Generator.html#callback">callback</a></li><li data-type='method'><a href="Generator.html#completer">completer</a></li><li data-type='method'><a href="Generator.html#init">init</a></li><li data-type='method'><a href="Generator.html#next">next</a></li><li data-type='method'><a href="Generator.html#register">register</a></li><li data-type='method'><a href="Generator.html#skip">skip</a></li></ul></li><li><a href="Task.html">Task</a><ul class='methods'><li data-type='method'><a href="Task.html#addStage">addStage</a></li><li data-type='method'><a href="Task.html#before">before</a></li><li data-type='method'><a href="Task.html#execute">execute</a></li><li data-type='method'><a href="Task.html#getId">getId</a></li><li data-type='method'><a href="Task.html#hasBefore">hasBefore</a></li><li data-type='method'><a href="Task.html#hasCompletions">hasCompletions</a></li><li data-type='method'><a href="Task.html#hasDefault">hasDefault</a></li><li data-type='method'><a href="Task.html#hasOnComplete">hasOnComplete</a></li><li data-type='method'><a href="Task.html#isDone">isDone</a></li><li data-type='method'><a href="Task.html#next">next</a></li><li data-type='method'><a href="Task.html#onCompletion">onCompletion</a></li><li data-type='method'><a href="Task.html#onCompletion">onCompletion</a></li><li data-type='method'><a href="Task.html#onCompletion">onCompletion</a></li><li data-type='method'><a href="Task.html#setCompletions">setCompletions</a></li><li data-type='method'><a href="Task.html#setDefault">setDefault</a></li></ul></li></ul><h3>Namespaces</h3><ul><li><a href="Util.html">Util</a><ul class='methods'><li data-type='method'><a href="Util.html#.proxy">proxy</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Stage.html">Stage</a><ul class='methods'><li data-type='method'><a href="Stage.html#before">before</a></li><li data-type='method'><a href="Stage.html#execute">execute</a></li><li data-type='method'><a href="Stage.html#init">init</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">generators/basic/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var readline = require('readline'),
+	util = require('../util');
+
+/**
+ * @class Generator
+ * @name Generator
+ * @description
+ * Represents a basic implementation of the project generator. 
+ */
+var Generator = function(){
+	/**
+	 * @memberOf Generator
+	 * @name Generator#tasks
+	 * @instance
+	 * @type {Array&lt;Task>}
+	 * @description
+	 * Holds the set of tasks that the generator needs to execute. 
+	 */
+	this.tasks = [];
+	/**
+	 * @memberOf Generator
+	 * @name Generator#completions
+	 * @instance
+	 * @type {Attay&lt;String>}
+	 * @description 
+	 * The set of completions for the currently executing task. 
+	 */
+	this.completions = [];
+	/**
+	 * @memberOf Generator
+	 * @name Generator#currentTask
+	 * @instance
+	 * @type {Task}
+	 * @description 
+	 * A reference to the currently executing task.
+	 */
+	this.currentTask = null;
+	/**
+	 * @memberOf Generator
+	 * @name Generator#rl
+	 * @instance
+	 * @type {readline}
+	 * @description
+	 * Holds a reference to the readline interface 
+	 */
+	this.rl = null;
+	this.init();
+};
+
+Generator.prototype = {
+	/**
+	 * @method
+	 * @methodOf Generator
+	 * @instance
+	 * @name Generator#init
+	 * @description 
+	 * Initializes the generator and creates the readline interface
+	 */
+	init:function(){
+		this.rl = readline.createInterface({
+		  input: process.stdin,
+		  output: process.stdout,
+		  completer:util.proxy(this.completer,this)
+		});
+	},
+	/**
+	 * @method
+	 * @methodOf Generator
+	 * @name Generator#next
+	 * @description
+	 * Executes the next step within the generator set of steps. 
+	 */
+	next:function(){
+		if (this.currentTask){
+			this.currentTask.before();
+			this.rl.question(this.currentTask.getPrompt(),
+				util.proxy(this.callback,this));
+		}else if (this.tasks.length > 0){
+			this.skip();
+		}else {
+			console.log('done');
+			this.rl.close();
+		}
+	},
+	/**
+	 * @method
+	 * @methodOf Generator
+	 * @name Generator#completer
+	 * @param {string} line the current user input
+	 * @returns {Array&lt;String>}
+	 * @description 
+	 * The completion callback function, this method is invoked everytime
+	 * the user presses the tab key. Such implementation allows for easier
+	 * testing as well as extension through replacing this method with an 
+	 * own implementation. The method returns an array of strings containing 
+	 * two elements, the first element being the possible completions for the
+	 * user input as an array of string, the second is what the prompt should
+	 * be. 
+	 * ```javascript
+	 *	return [['test','test-ng','test-task'],'te'];
+	 * ```
+	 */
+	completer:function(line){
+		if (this.currentTask.hasOnComplete()){ 
+			return this.currentTask.onComplete(line);
+		}
+		if (!this.currentTask.hasCompletions()){
+			return [];
+		}
+		var completions = this.currentTask.getCompletions();
+	  	var hits = completions.filter(function(c){
+	  		return c.indexOf(line) == 0;
+	  	});
+	  	return [hits.length?hits: completions, line];
+	},
+	/**
+	 * @method
+	 * @methodOf Generator
+	 * @name Generator#skip 
+	 * @description
+	 * Skips the current task, and moves to the next. 
+	 */ 
+	skip:function(){
+		this.currentTask = this.tasks.shift();
+		this.next();
+	},
+	/**
+	 * @method
+	 * @methodOf Generator
+	 * @name Generator#callback
+	 * @description
+	 * This method is called everytime the user submits an answer to
+	 * the generator. The answer is then propagated to the current task
+	 * [execute]{@link Task#execute} method
+	 */
+	callback:function(answer){
+		var a = answer.trim();
+		if (answer &amp;&amp; answer.trim() !== ""){
+			this.currentTask.execute(answer,this);
+		} else {
+			if (this.currentTask.hasDefault()){
+				this.currentTask.execute(this.currentTask.getDefault(),this);
+			}else if (!this.currentTask.isDone()){
+				this.currentTask.next();
+			}else{
+				this.skip();
+			}
+		}
+		this.next();
+	},
+	/**
+	 * @method
+	 * @methodOf Generator
+	 * @name Generator#register
+	 * @param {Task} task a task to register 
+	 * @description
+	 * Registers a new task with the generator. 
+	 */
+	register:function(task){
+		this.tasks.push(task);
+	}
+};
+module.exports = Generator;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a> on Tue May 19 2015 21:07:50 GMT+0100 (BST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/tasks/basic/index.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ProjectGenie.Generator.html">Generator</a><ul class='methods'><li data-type='method'><a href="ProjectGenie.Generator.html#callback">callback</a></li><li data-type='method'><a href="ProjectGenie.Generator.html#completer">completer</a></li><li data-type='method'><a href="ProjectGenie.Generator.html#init">init</a></li><li data-type='method'><a href="ProjectGenie.Generator.html#next">next</a></li><li data-type='method'><a href="ProjectGenie.Generator.html#register">register</a></li><li data-type='method'><a href="ProjectGenie.Generator.html#skip">skip</a></li></ul></li><li><a href="ProjectGenie.Task.html">Task</a><ul class='methods'><li data-type='method'><a href="ProjectGenie.Task.html#addStage">addStage</a></li><li data-type='method'><a href="ProjectGenie.Task.html#before">before</a></li><li data-type='method'><a href="ProjectGenie.Task.html#execute">execute</a></li><li data-type='method'><a href="ProjectGenie.Task.html#getCompletions">getCompletions</a></li><li data-type='method'><a href="ProjectGenie.Task.html#getDefault">getDefault</a></li><li data-type='method'><a href="ProjectGenie.Task.html#getId">getId</a></li><li data-type='method'><a href="ProjectGenie.Task.html#getPrompt">getPrompt</a></li><li data-type='method'><a href="ProjectGenie.Task.html#hasBefore">hasBefore</a></li><li data-type='method'><a href="ProjectGenie.Task.html#hasCompletions">hasCompletions</a></li><li data-type='method'><a href="ProjectGenie.Task.html#hasDefault">hasDefault</a></li><li data-type='method'><a href="ProjectGenie.Task.html#hasOnComplete">hasOnComplete</a></li><li data-type='method'><a href="ProjectGenie.Task.html#isDone">isDone</a></li><li data-type='method'><a href="ProjectGenie.Task.html#next">next</a></li><li data-type='method'><a href="ProjectGenie.Task.html#onCompletion">onCompletion</a></li><li data-type='method'><a href="ProjectGenie.Task.html#setCompletions">setCompletions</a></li><li data-type='method'><a href="ProjectGenie.Task.html#setDefault">setDefault</a></li><li data-type='method'><a href="ProjectGenie.Task.html#setPrompt">setPrompt</a></li></ul></li><li><a href="ProjectGenie.Tasks.BowerTask.html">BowerTask</a><ul class='methods'><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#addStage">addStage</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#before">before</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#execute">execute</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#getCompletions">getCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#getDefault">getDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#getId">getId</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#getPrompt">getPrompt</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#hasBefore">hasBefore</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#hasCompletions">hasCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#hasDefault">hasDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#hasOnComplete">hasOnComplete</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#isDone">isDone</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#next">next</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#onCompletion">onCompletion</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#setCompletions">setCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#setDefault">setDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.BowerTask.html#setPrompt">setPrompt</a></li></ul></li><li><a href="ProjectGenie.Tasks.FolderTask.html">FolderTask</a><ul class='methods'><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#addStage">addStage</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#before">before</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#execute">execute</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#getCompletions">getCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#getDefault">getDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#getId">getId</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#getPrompt">getPrompt</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#hasBefore">hasBefore</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#hasCompletions">hasCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#hasDefault">hasDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#hasOnComplete">hasOnComplete</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#isDone">isDone</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#next">next</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#onCompletion">onCompletion</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#setCompletions">setCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#setDefault">setDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.FolderTask.html#setPrompt">setPrompt</a></li></ul></li><li><a href="ProjectGenie.Tasks.GulpTask.html">GulpTask</a><ul class='methods'><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#addStage">addStage</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#before">before</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#execute">execute</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#getCompletions">getCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#getDefault">getDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#getId">getId</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#getPrompt">getPrompt</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#hasBefore">hasBefore</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#hasCompletions">hasCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#hasDefault">hasDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#hasOnComplete">hasOnComplete</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#isDone">isDone</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#next">next</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#onCompletion">onCompletion</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#setCompletions">setCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#setDefault">setDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.GulpTask.html#setPrompt">setPrompt</a></li></ul></li><li><a href="ProjectGenie.Tasks.NpmTask.html">NpmTask</a><ul class='methods'><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#addStage">addStage</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#before">before</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#execute">execute</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#getCompletions">getCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#getDefault">getDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#getId">getId</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#getPrompt">getPrompt</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#hasBefore">hasBefore</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#hasCompletions">hasCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#hasDefault">hasDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#hasOnComplete">hasOnComplete</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#isDone">isDone</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#next">next</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#onCompletion">onCompletion</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#setCompletions">setCompletions</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#setDefault">setDefault</a></li><li data-type='method'><a href="ProjectGenie.Tasks.NpmTask.html#setPrompt">setPrompt</a></li></ul></li></ul><h3>Namespaces</h3><ul><li><a href="ProjectGenie.html">ProjectGenie</a></li><li><a href="ProjectGenie.Tasks.html">Tasks</a></li><li><a href="Util.html">Util</a><ul class='methods'><li data-type='method'><a href="Util.html#.proxy">proxy</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="ProjectGenie.Stage.html">Stage</a><ul class='methods'><li data-type='method'><a href="ProjectGenie.Stage.html#before">before</a></li><li data-type='method'><a href="ProjectGenie.Stage.html#execute">execute</a></li><li data-type='method'><a href="ProjectGenie.Stage.html#init">init</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">src/tasks/basic/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var _ = require('underscore'); 
+/**
+ * @interface ProjectGenie.Stage
+ * @description
+ * Represents a single stage in a task  
+ */
+
+/**
+* @function
+* @name ProjectGenie.Stage#init
+* @abstract
+* @param {ProjectGenie.Task} task the parent task
+* @optional
+* @description
+* Performs stage initialization
+*/
+
+/**
+ * @function
+ * @name ProjectGenie.Stage#before
+ * @abstract
+ * @param {ProjectGenie.Task} task the parent task 
+ * @optional 
+ * @description 
+ * This method (if defined) is executed right before the 
+ * [execute]{@link ProjectGenie.Stage#execute} method. 
+ */
+
+ /**
+  * @function
+  * @name ProjectGenie.Stage#execute
+  * @abstract
+  * @param {string} answer the user provided input 
+  * @param {ProjectGenie.Task} task the parent task
+  * @param {ProjectGenie.Generator} generator the executing generator
+  * @description
+  * This method performs the logic of the stage depending 
+  * on user input. 
+  */
+ 
+/**
+ * @class 
+ * @name ProjectGenie.Task
+ * @param {string} id the id of the task   
+ * @param {Array&lt;ProjectGenie.Stage>} stages the different stages within the task. See the example below
+ * @description
+ * Represents a basic class interface, all generator tasks should inherit from this class. 
+ * The class provides implementation for the common methods and defines a generic interface that
+ * the generator uses to perform the different stages of the task. 
+ * @example
+ * ```javascript
+ * // example stage array 
+ * [{
+ *		//the init method is optional 	
+ *		init:function(task){
+ * 			//any initialization goes here such as setting the task prompt 
+ * 		},
+ *		//the execute method must exist within the object literal
+ *		execute:function(answer,task,gen){
+ *			//the stage implementation goes here 
+ * 		},
+ *		//the complete method is optional, only if the stage requires handling completions differently.
+ *		complete:function(line,task,gen){
+ *			return [hits,line]; 	
+ *		},
+ * }]
+ *```
+ *
+ * 
+ */
+var Task = function(id,stages){ 
+	/**
+	 * @name ProjectGenie.Task#id
+	 * @type {string}
+	 * @instance 
+	 * @member
+	 * @description
+	 * holds the id of the task
+	 */
+	this.id = id;
+	/**
+	 * @name ProjectGenie.Task#prompt
+	 * @type {string}
+	 * @member
+	 * @instance
+	 * @description
+	 * holds the current prompt of the task
+	 */
+	this.prompt = null;
+	/**
+	 * @name ProjectGenie.Task#currentStage
+	 * @type {ProjectGenie.Stage}
+	 * @member
+	 * @instance
+	 * @description
+	 * holds a reference to the current stage within the task
+	 */
+	this.currentStage = null;
+	/**
+	 * @name ProjectGenie.Task#completions
+	 * @member 
+	 * @type {Array&lt;string>} 
+	 * @instance
+	 * @description 
+	 * holds a list of completions of the current stage 
+	 */
+	this.completions = [];
+	/**
+	 * @name ProjectGenie.Task#stages
+	 * @member
+	 * @type {Array&lt;ProjectGenie.Stage>}
+	 * @instance
+	 * @description
+	 * holds the different stages within the task
+	 */
+	this.stages = stages||[]; 
+	/**
+	 * @name ProjectGenie.Task#def
+	 * @member
+	 * @type {any}
+	 * @instance
+	 * @description
+	 * holds the default value of the current stage
+	 */
+	this.def = null;
+	this.next();
+};
+
+Task.prototype = {
+	/**
+	 * @method 
+	 * @name ProjectGenie.Task#addStage
+	 * @instance
+	 * @param {ProjectGenie.Stage} stage the stage to add 
+	 * @returns {ProjectGenie.Task} 
+	 * @description
+	 * Add a stage to the list of stages within the task
+	 */
+	addStage:function(stage){
+		this.stages.push(stage);
+		return this;
+	},
+
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#getId
+	 * @instance
+	 * @returns {string} the id of the task
+	 * @description 
+	 * Returns the id of the task
+	 */
+	getId:function(){
+		return this.id; 
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#hasDefault
+	 * @instance
+	 * @returns {boolean} the id of the task
+	 * @description 
+	 * Returns true if the current stage has a default value, false otherwise
+	 */
+
+	hasDefault:function(){
+		return this.def;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#hasBefore
+	 * @instance
+	 * @returns {boolean} the id of the task
+	 * @description 
+	 * Returns true if the current stage has a default value, false otherwise
+	 */
+	hasBefore:function(){
+		return this.currentStage.before;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#before
+	 * @instance
+	 * @description 
+	 * Executes the "before" method of the current stage if it has one. 
+	 */
+	before:function(gen){
+		if (this.hasBefore()){
+			this.currentStage.before(this,gen);
+			this.currentStage.before = null;
+		}
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#hasCompletions
+	 * @instance
+	 * @returns {boolean}
+	 * @description 
+	 * Returns true if the current stage has completions
+	 */
+	hasCompletions:function(){
+		return (this.completions &amp;&amp; this.completions.length > 0);
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#setCompletions
+	 * @param {Array&lt;string>} comps an array of strings representing the current completions. 
+	 * @instance
+	 * @returns {ProjectGenie.Task} the current instance 
+	 * @description 
+	 * Sets the completions of the current stage, and returns the current instance 
+	 */
+	setCompletions:function(comps){
+		this.completions = comps;
+		return this;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#hasOnComplete
+	 * @instance
+	 * @returns {boolean} 
+	 * @description 
+	 * Tests whether the current stage has an complete function,
+	 * true if it has, false otherwise
+	 */
+	hasOnComplete:function(){
+		return this.currentStage.complete;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#onCompletion
+	 * @instance
+	 * @description 
+	 * Calls the stage implementation of the completion strategy, if exists. 
+	 */
+	onCompletion:function(line){
+		if (this.currentStage.complete){
+			this.currentStage.complete(line,this);
+		}
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#getCompletions
+	 * @instance
+	 * @description 
+	 * Returns the command line completions of the current stage
+	 */
+	getCompletions:function(){
+		return this.completions;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#getDefault
+	 * @instance
+	 * @returns {any} 
+	 * @description 
+	 * Returns the default value of the current stage (if any)
+	 */
+	getDefault:function(){
+		return this.def;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#setDefault
+	 * @instance
+	 * @param {any} d the default value
+	 * @returns {ProjectGenie.Task} the current task instance
+	 * @description 
+	 * Sets the default value of the task for the current stage. 
+	 */
+	setDefault:function(d){
+		this.def = d;
+		return this;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#setPrompt
+	 * @instance
+	 * @param {string} prompt the command line prompt for the current stage of the task
+	 * @returns {ProjectGenie.Task}
+	 * @description    
+	 * Sets the command line prompt for the current stage of the task. 
+	 */
+	setPrompt:function(prompt){
+		this.prompt = prompt;
+		return this;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#getPrompt
+	 * @instance
+	 * @returns {string}
+	 * @description 
+	 * Returns the current prompt of the current stage of the task. 
+	 */
+	getPrompt:function(){
+		return this.prompt;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#next
+	 * @description
+	 * Moves the task execution to the next stage. The new [Stage's]{@link Stage} 
+	 * init method is executed at this stage. 
+	 */
+	next:function(){
+		if (this.stages.length > 0){
+			this.currentStage = this.stages.shift();
+			this.currentStage.init(this);
+		}
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#isDone
+	 * @returns {boolean} true if done, false otherwise
+	 * @description 
+	 * Tests whether the current task is done,
+	 * A task is done when all its stages have been executed. 
+	 */
+	isDone:function(){
+		return this.stages.length === 0;
+	},
+	/**
+	 * @method
+	 * @name ProjectGenie.Task#execute
+	 * @param {string} answer the input collected from the user
+	 * @param {gen} a reference to the generator executing the task
+	 * @description 
+	 * Executes the current step within this task. 
+	 */
+	execute:function(answer,gen){
+		if (this.currentStage){
+			if (this.currentStage.execute){
+				this.currentStage.execute(answer,this,gen);
+			}
+			if (this.currentStage.after){
+				this.currentStage.after(this,gen);
+			}
+		}else if (this.stages.length > 0){
+			this.next();
+		}else {
+			gen.skip();
+		}
+	},
+};
+
+Task.extend = function(cstr){
+	cstr.prototype = Task.prototype;
+	cstr.prototype.constructor = Task;
+};
+
+Task.create = function(cstr,prototype){
+	cstr.prototype = _.extend({},prototype,Task.prototype);
+	cstr.prototype.constructor = Task;
+
+}
+
+module.exports = Task;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a> on Wed May 20 2015 01:04:52 GMT+0100 (BST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

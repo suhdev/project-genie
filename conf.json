@@ -1,0 +1,26 @@
+{
+	"tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+	"plugins": ["plugins/markdown"],
+	"templates": {
+    "systemName"            : "Project Genie",
+    "footer"                : "Copyright Suhail Abood (c) 2015",
+    "copyright"             : "Suhail Abood &copy; 2015",
+    "navType"               : "inline",
+    "theme"                 : "journal",
+    "linenums"              : true,
+    "collapseSymbols"       : true,
+    "inverseNav"            : false,
+    "outputSourceFiles"     : true,
+    "outputSourcePath"      : true,
+    "dateFormat"            : "YYYY-MM-DD",
+    "highlightTutorialCode" : true,
+    "syntaxTheme"           : "default"
+	},
+	"markdown": {
+		"hardwrap": true,
+		"tags": ["example","examples","markdown","description"]
+	}
+}
